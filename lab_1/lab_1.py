@@ -1,8 +1,5 @@
-f = open("test.txt", 'w+')  # Откры/создан файл test.txt в зависимотсти от существования файла с таким названием 
-# Достоинства txt: -простота - экономичность
-
-
 def list_filling():  # Ввод значений через пробел, а затем изменение типа элементов списка
+    print("Введите произвольное количество чисел через пробел")
     temp = input().split(' ')
     temp = [float(x) for x in temp]
     return temp
@@ -19,13 +16,14 @@ def list_rounding(local_list):  # Округление элементов спи
 
 
 def list_writing(local_list):  # Запись значений в файл
+    f = open("test.txt", 'w+')  # Открыт/создан файл test.txt в зависимотсти от существования файла с таким названием
+    # Достоинства txt: -простота - экономичность
     for x in local_list:
         f.write(str(x) + "\n")
+    f.close()  # Закрытие файла на запись
 
 
 lst = list_filling()
 lst = list_changing(lst)
 lst = list_rounding(lst)
 list_writing(lst)
-
-f.close()  # Закрытие файла на запись
