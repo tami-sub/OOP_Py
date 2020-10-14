@@ -1,26 +1,16 @@
-from abc import ABC, abstractmethod
-
-
-class Pizza(ABC):
+class Pizza():
     __filling = []
     name = ""
     dough = ""
     sauce = ""
 
-    @abstractmethod
     def cooking(self):
         pass
 
-    @abstractmethod
     def wrapping(self):
         pass
 
-
-class SuperPizza():
-    def __str__(self):
-        print("Эта пицца была упомянута в JoJo")
-
-
+    
 class Pepperoni(Pizza):
     def __init__(self):
         self.name = "Пепперони"
@@ -36,7 +26,7 @@ class Pepperoni(Pizza):
         print("Пицца " + self.name + " запаковывается \n Пицца упакована!")
 
 
-class Mozarella(Pizza, SuperPizza):
+class Mozarella(Pizza):
     def __init__(self):
         self.name = "Моцапелла"
         self.dough = "Тонкое"
@@ -91,8 +81,6 @@ class Terminal():
             currentOrder.add(storage[maPizza])
             storage[maPizza].cooking()
             storage[maPizza].wrapping()
-
-            storage[maPizza].__str__()
             currentOrder.__str__()
         else:
             break
