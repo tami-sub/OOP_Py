@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Pizza(ABC):
     __filling = []
-    __name = ""
+    name = ""
     dough = ""
     sauce = ""
 
@@ -23,7 +23,7 @@ class SuperPizza():
 
 class Pepperoni(Pizza):
     def __init__(self):
-        self.__name = "Пепперони"
+        self.name = "Пепперони"
         self.dough = "Толстое"
         self.sauce = "Сырный"
         self.__filling = ["Пепперони", "Шампиньоны", "Моцарелла"]
